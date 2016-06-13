@@ -1,0 +1,19 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">My Presets</h1>
+    <button class="button icon ion-close" ng-click="closepresetsList()"></button>
+    <button class="button button-icon icon ion-ios-minus-outline" ng-click="toggleDelete()"></button>
+  </ion-header-bar>
+  
+  <ion-content>
+    <ion-list show-delete="shouldShowDelete">
+      <ion-item ng-repeat="preset in presets" ng-click="loadPreset(preset)" href="#/app/play" class="item" on-swipe-left="deletePreset(preset)">
+        <img ng-src="{{baseURL+dish.image}}">
+        <h2>{{preset.name}}</h2>
+        <ion-delete-button class="ion-minus-circled"
+          ng-click="deletePreset(preset)">
+        </ion-delete-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-modal-view>

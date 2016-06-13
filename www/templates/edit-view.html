@@ -1,0 +1,42 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Edit The Preset</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeEditForm()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+
+
+    <div class="item item-divider">
+      Root Note:  {{rootNoteValues[Edits.rootIndex][0]}}
+    </div>
+
+    <div class="item range">
+      <input type="range" name="root" min="0" max="6" step="1" ng-model="Edits.rootIndex" ng-change="changeRootIndex()">
+    </div>
+
+    <div class="item item-divider">
+      Key: {{Edits.key}}
+    </div>
+    <ion-list>
+      <ion-radio ng-model="Edits.key" ng-value="'major'" value="major">Major</ion-radio>
+      <ion-radio ng-model="Edits.key" ng-value="'minor'" value="minor">Minor</ion-radio>
+    </ion-list>
+
+
+    <div class="item item-divider">
+      Sound Type: {{Edits.soundType}}
+    </div>
+    <ion-list>
+      <ion-radio ng-model="Edits.soundType" ng-value="'triangle'" value="triangle" ng-change="setOscType()">Triangle</ion-radio>
+      <ion-radio ng-model="Edits.soundType" ng-value="'sawtooth'" value="sawtooth" ng-change="setOscType()">Sawtooth</ion-radio>
+      <ion-radio ng-model="Edits.soundType" ng-value="'square'" value="square" ng-change="setOscType()">Square</ion-radio>
+    </ion-list>
+
+    <label class="item">
+      <button class="button button-block button-positive" ng-click="closeEditForm()">Done</button>
+    </label>
+
+  </ion-content>
+</ion-modal-view>

@@ -1,0 +1,44 @@
+<ion-view view-title="Play">
+
+
+  <ion-content>
+
+    <button class="button icon ion-plus-round" ng-click="showNewPresetModal()"></button>
+    <button class="button icon ion-android-archive" ng-click="saveCurrentPreset()"></button>
+    <button class="button icon ion-edit" ng-click="showEditForm()"></button>
+    <button class="button" ng-click="showpresetsList()">
+      {{currentPreset}}
+    </button>
+
+
+
+    <div class="list">
+      <div class="item range range-positive">
+        <input type="range" min="0.01" max="1" step="0.01" value="{{Sliders.spread}}" ng-model="Sliders.spread" ng-change="Slider1()">
+      </div>
+      <div class="item range range-positive">
+        <input type="range" min="0.01" max="1" step="0.01" value="{{Sliders.slide2}}" ng-model="Sliders.slide2" ng-change="Slider2()">
+      </div>
+      <div class="item range range-positive">
+        <input type="range" min="0.01" max="1" step="0.01" value="{{Sliders.slide3}}" ng-model="Sliders.slide3" ng-change="Slider3()">
+      </div>
+      <div class="item range range-positive">
+        <input type="range" min="0.01" max="1" step="0.01" value="{{Sliders.slide4}}" ng-model="Sliders.slide4" ng-change="Slider4()">
+      </div>
+      <div class="item range range-positive">
+        <input type="range" name="slider5" min="0.01" max="1" step="0.01" value="{{Sliders.slide5}}" ng-model="Sliders.slide5" ng-change="Slider5()">
+      </div>
+    </div>
+
+    <div class="button-bar">
+      <a class="button button-positive" ng-mousedown="play(1)" ng-mouseup="mute()">I</a>
+      <a class="button button-calm" ng-mousedown="play(2)" ng-mouseup="mute()">II</a>
+      <a class="button button-positive" ng-mousedown="play(3)" ng-mouseup="mute()">III</a>
+    </div>
+    <div class="button-bar">
+      <a class="button button-calm" ng-mousedown="play(4)" ng-mouseup="mute()">IV</a>
+      <a class="button button-positive" ng-mousedown="play(5)" ng-mouseup="mute()">V</a>
+    </div>
+
+  </ion-content>
+</ion-view>

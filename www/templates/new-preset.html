@@ -1,0 +1,23 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Save New Preset</h1>
+  </ion-header-bar>
+
+  <ion-content>
+
+    <div class="list">
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Preset Name</span>
+        <input type="text" placeholder="Preset Name" ng-model="Edits.newPresetName">
+      </label>
+    </div>
+
+    <div class="button-bar">
+      <a class="button button-positive" ng-click="saveNewPreset()">Save</a>
+      <a class="button button-stable" ng-click="closeNewPresetModal()">Cancel</a>
+    </div>
+
+
+
+  </ion-content>
+</ion-modal-view>
